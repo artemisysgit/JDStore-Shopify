@@ -1,0 +1,88 @@
+{% comment %}
+  <style>
+    /* Style for product display can be added based on your design requirements */
+    @media only screen and (min-width: 750px) {
+      .js-wishlistBlock {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        column-gap: var(--grid-desktop-horizontal-spacing);
+      }
+    }
+
+    .c-product {
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    .c-product img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 5px;
+      transition: all 0.5s ease;
+    }
+
+    .c-product img:hover {
+      transform: scale(1.03);
+    }
+
+    .c-product h3.c-product__title {
+      margin-top: 10px;
+      position: relative;
+    }
+  </style>
+{% endcomment %}
+{% comment %} <button onclick="clearWishlist()">Clear Wishlist</button> {% endcomment %}
+<section class="breadcrumb__area include-bg pt-95 pb-50">
+  <div class="container">
+    <div class="row">
+      <div class="col-xxl-12">
+        <div class="breadcrumb__content p-relative z-index-1">
+          <h3 class="breadcrumb__title">Wishlist</h3>
+          <div class="breadcrumb__list">
+            <span><a href="#">Home</a></span>
+            <span>Wishlist</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% comment %}
+  <div class="js-wishlistBlock">
+    <!-- Wishlist items will be displayed here -->
+  </div>
+{% endcomment %}
+
+<section class="tp-cart-area pb-120">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="tp-cart-list mb-45 mr-30">
+          <table class="table">
+            <thead>
+              <tr>
+                <th colspan="2" class="tp-cart-header-product">Product</th>
+                <th class="tp-cart-header-price">Price</th>
+                {% comment %} <th class="tp-cart-header-quantity">Quantity</th> {% endcomment %}
+                <th>Action</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody class="js-wishlistBlock"></tbody>
+          </table>
+        </div>
+        <div class="tp-cart-bottom">
+          <div class="row align-items-end">
+            <div class="col-xl-6 col-md-4">
+              <div class="tp-cart-update">
+                <a href="/cart" class="tp-cart-update-btn">Go To Cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,81 @@
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    {% for block in section.blocks %}
+      <div class="carousel-item {% if forloop.first %}active{% endif %}">
+        <img
+          src="{{ block.settings.image_banner | img_url: 'master' }}"
+          class="d-block w-100"
+          alt="banner"
+          width=""
+          height=""
+        >
+
+        <div class="car-content">
+          <h4>{{ block.settings.top_heading }}</h4>
+          <h2>{{ block.settings.banner_sub_heading }}</h2>
+
+          {% assign collection_handle = block.settings.selected_collection %}
+          {% assign collection = collections[collection_handle] %}
+          <a href="{{ collection.url }}">Shop Now</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+{% schema %}
+{
+  "name": "Banner",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "banner",
+      "name": "Banner",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "top_heading",
+          "default": "Heading Text",
+          "label": "Top Heading"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "banner_sub_heading",
+          "default": "Banner Sub Heading Text",
+          "label": "Banner Sub Heading"
+        },
+        {
+          "type": "collection",
+          "id": "selected_collection",
+          "label": "Select Collection"
+          //"default": "frontpage"
+        },
+        {
+          "type": "image_picker",
+          "label": "Banner Image",
+          "id": "image_banner"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "banner"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

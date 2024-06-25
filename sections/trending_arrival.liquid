@@ -1,0 +1,170 @@
+<section class="tp-trending-area pt-140 pb-150">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xl-6 col-lg-6">
+        <div class="tp-trending-wrapper">
+          <div class="tp-section-title-wrapper-2 mb-50">
+            <span class="tp-section-title-pre-2">
+              {{ section.settings.top_heading }}
+              <svg width="82" height="22" viewBox="0 0 82 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M81 14.5798C0.890564 -8.05914 -5.81154 0.0503902 5.00322 21" stroke="currentColor" stroke-opacity="0.3" stroke-width="2" stroke-miterlimit="3.8637" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <h3 class="tp-section-title-2">{{ section.settings.big_heading }}</h3>
+          </div>
+          <div class="tp-trending-slider">
+            <div class="tp-trending-slider-active swiper-container">
+              <div class="swiper-wrapper">
+                {% for block in section.blocks %}
+                  {% assign product_handle = block.settings.selected_product %}
+                  {% assign product = all_products[product_handle] %}
+
+                  <div class="tp-trending-item swiper-slide">
+                    <div class="tp-product-item-2">
+                      <div class="tp-product-thumb-2 p-relative z-index-1 fix w-img">
+                        <a href="{{ product.url }}">
+                          <img
+                            src="{{ product.featured_image | img_url: 'master' }}"
+                            alt="{{ product.title }}"
+                            width=""
+                            height=""
+                          >
+                        </a>
+                        <div class="tp-product-action-2 tp-product-action-blackStyle">
+                          <div class="tp-product-action-item-2 d-flex flex-column">
+                            {% comment %}
+                              <button type="button" class="tp-product-action-btn-2 tp-product-add-cart-btn">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                <span class="tp-product-tooltip tp-product-tooltip-right">Add to Cart</span>
+                              </button>
+                            {% endcomment %}
+                            <button
+                              type="button"
+                              class="tp-product-action-btn-2 tp-product-quick-view-btn"
+                              data-bs-toggle=""
+                              data-bs-target="#producQuickViewModal"
+                            >
+                              <a href="{{ product.url }}">
+                                <i class="fa-regular fa-eye"></i>
+                                <span class="tp-product-tooltip tp-product-tooltip-right">Quick View</span>
+                              </a>
+                            </button>
+                            <button
+                              type="button"
+                              class="tp-product-action-btn-2 tp-product-add-to-wishlist-btn"
+                              onclick="
+                                toggleWishlist(
+                                '{{ product.id }}',
+                                '{{ product.title }}',
+                                '{{ product.featured_image | img_url: '' }}',
+                                '{{ product.price | money | remove_first: '' }}',
+                                '{{ product.url }}')
+                              "
+                            >
+                              <i class="fa-regular fa-heart"></i>
+                              <span class="tp-product-tooltip tp-product-tooltip-right">Wishlist</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tp-product-content-2 pt-15">
+                        {% comment %}
+                          <div class="tp-product-tag-2">
+                            <a href="#">Tag Name</a>
+                          </div>
+                        {% endcomment %}
+                        <h3 class="tp-product-title-2">
+                          <a href="{{ product.url }}">{{ product.title }}</a>
+                        </h3>
+                        <div class="tp-product-price-wrapper-2">
+                          <span class="tp-product-price-2 new-price">{{ product.price | money }}</span>
+                          <span class="tp-product-price-2 old-price">
+                            {%- if product.compare_at_price != '' %}
+                              {{ product.compare_at_price | money }}
+                            {% endif -%}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="tp-trending-slider-dot tp-swiper-dot text-center mt-45"></div>
+          </div>
+        </div>
+      </div>
+
+      {% assign collection_handle = section.settings.selected_collection %}
+      {% assign collection = collections[collection_handle] %}
+      <div class="col-xl-4 col-lg-5 col-md-8 col-sm-10">
+        <div class="tp-trending-banner p-relative ml-35">
+          <div
+            class="tp-trending-banner-thumb w-img include-bg"
+            data-background="{{ section.settings.image_banner | img_url: 'master' }}"
+          ></div>
+          <div class="tp-trending-banner-content">
+            <h3 class="tp-trending-banner-title">
+              <a href="{{ collection.url }}"
+                >Shop for <br>
+                {{ collection.title -}}
+              </a>
+            </h3>
+            <div class="tp-trending-banner-btn">
+              <a href="{{collection.url}}" class="tp-btn tp-btn-border tp-btn-border-white tp-btn-border-white-sm">
+                Explore More
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Trending Arrivals",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "top_heading",
+      "default": "Heading Text",
+      "label": "Top Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "big_heading",
+      "default": "Heading Text",
+      "label": "Big Heading"
+    },
+    {
+      "type": "collection",
+      "id": "selected_collection",
+      //"default": "Heading Text",
+      "label": "Select Collection"
+    },
+    {
+      "type": "image_picker",
+      "label": "Banner Image",
+      "id": "image_banner"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "selected_product",
+          "label": "Select Product"
+          //"default": "frontpage"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6
+}
+{% endschema %}

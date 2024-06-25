@@ -1,0 +1,335 @@
+{% assign product = product %}
+<section class="tp-product-area pb-90">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="tp-section-title-wrapper-2 text-center mb-35">
+          <span class="tp-section-title-pre-2">
+            {{ section.settings.top_heading }}
+            <svg width="82" height="22" viewBox="0 0 82 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M81 14.5798C0.890564 -8.05914 -5.81154 0.0503902 5.00322 21" stroke="currentColor" stroke-opacity="0.3" stroke-width="2" stroke-miterlimit="3.8637" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <h3 class="tp-section-title-2">{{ section.settings.big_heading }}</h3>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="tp-product-tab-2 tp-tab mb-50 text-center">
+          <nav>
+            <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
+              <button
+                class="nav-link active"
+                id="nav-allCollection-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-allCollection"
+                type="button"
+                role="tab"
+                aria-controls="nav-allCollection"
+                aria-selected="true"
+              >
+                All Collection
+              </button>
+              {% for block in section.blocks %}
+                {% assign collection_handle = block.settings.selected_collection %}
+                {% assign collection = collections[collection_handle] %}
+
+                <button
+                  class="nav-link"
+                  id="{{ collection.handle }}-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#{{ collection.handle }}"
+                  type="button"
+                  role="tab"
+                  aria-controls="{{ collection.handle }}"
+                  aria-selected="false"
+                >
+                  {{ collection.title }}
+                </button>
+              {% endfor %}
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="tab-content" id="nav-tabContent">
+          <div
+            class="tab-pane fade show active"
+            id="nav-allCollection"
+            role="tabpanel"
+            aria-labelledby="nav-allCollection-tab"
+            tabindex="0"
+          >
+            <div class="row">
+              {% assign recent_products = collections.all.products | sort: 'created_at' | reverse | slice: 0, 8 %}
+
+              {% for product in recent_products %}
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                  <div class="tp-product-item-2 mb-40">
+                    <div class="tp-product-thumb-2 p-relative z-index-1 fix w-img">
+                      <a href="{{ product.url}}">
+                        <img
+                          src="{{ product.featured_image | img_url: 'master' }}"
+                          alt="{{ product.title }}"
+                          width="100%"
+                          height="240px"
+                        >
+                      </a>
+                      <div class="tp-product-action-2 tp-product-action-blackStyle">
+                        <div class="tp-product-action-item-2 d-flex flex-column">
+                          {% comment %}
+                            <button type="button" class="tp-product-action-btn-2 tp-product-add-cart-btn">
+                              <i class="fa-solid fa-cart-plus"></i>
+                              <span class="tp-product-tooltip tp-product-tooltip-right">Add to Cart</span>
+                            </button>
+                          {% endcomment %}
+                          <button
+                            type="button"
+                            class="tp-product-action-btn-2 tp-product-quick-view-btn"
+                            data-bs-toggle=""
+                            data-bs-target="#producQuickViewModal"
+                          >
+                            {% comment %}
+                              <button
+                                type="button"
+                                class="tp-product-action-btn-2 tp-product-quick-view-btn"
+                                data-bs-toggle="modal"
+                                data-bs-target="#producQuickViewModal"
+                              >
+                            {% endcomment %}
+                            <a href="{{ product.url }}">
+                              <i class="fa-regular fa-eye"></i>
+                              <span class="tp-product-tooltip tp-product-tooltip-right">Quick View</span>
+                            </a>
+                          </button>
+                          <button
+                            type="button"
+                            class="tp-product-action-btn-2 tp-product-add-to-wishlist-btn wishlist_button"
+                            onclick="
+                              toggleWishlist(
+                              '{{ product.id }}',
+                              '{{ product.title }}',
+                              '{{ product.featured_image | img_url: '' }}',
+                              '{{ product.price | money | remove_first: '' }}',
+                              '{{ product.url }}')
+                            "
+                          >
+                            <i
+                              class="fa-regular fa-heart all-wish"
+                            ></i>
+                            <span class="tp-product-tooltip tp-product-tooltip-right">Wishlist</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tp-product-content-2 pt-15">
+                      <div class="tp-product-tag-2">
+                        {% comment %} <a href="#">Tag Name</a> {% endcomment %}
+                      </div>
+                      <h3 class="tp-product-title-2">
+                        <a href="{{ product.url }}">{{ product.title }}</a>
+                      </h3>
+                      <div class="tp-product-rating-icon tp-product-rating-icon-2">
+                        <span><i class="fa-solid fa-star"></i></span>
+                        <span><i class="fa-solid fa-star"></i></span>
+                        <span><i class="fa-solid fa-star"></i></span>
+                        <span><i class="fa-solid fa-star"></i></span>
+                        <span><i class="fa-solid fa-star"></i></span>
+                      </div>
+                      <div class="tp-product-price-wrapper-2">
+                        <span class="tp-product-price-2 new-price">{{ product.price | money }}</span>
+                        <span class="tp-product-price-2 old-price">
+                          {%- if product.compare_at_price != '' %}
+                            {{ product.compare_at_price | money }}
+                          {% endif -%}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          {% for block in section.blocks %}
+            {% assign collection_handle = block.settings.selected_collection %}
+            {% assign collection = collections[collection_handle] %}
+
+            <div
+              class="tab-pane fade"
+              id="{{ collection.handle }}"
+              role="tabpanel"
+              aria-labelledby="{{ collection.handle }}-tab"
+              tabindex="0"
+            >
+              <div class="row">
+                {% assign recent_products = collection.products | sort: 'created_at' | reverse | slice: 0, 8 %}
+
+                {% for product in recent_products %}
+                  <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                    <div class="tp-product-item-2 mb-40">
+                      <div class="tp-product-thumb-2 p-relative z-index-1 fix w-img">
+                        <a href="{{ product.url}}">
+                          <img
+                            src="{{ product.featured_image | img_url: 'master' }}"
+                            alt="{{ product.title }}"
+                            width="100%"
+                            height="240px"
+                          >
+                        </a>
+                        <div class="tp-product-action-2 tp-product-action-blackStyle">
+                          <div class="tp-product-action-item-2 d-flex flex-column">
+                            {% comment %}
+                              <button type="button" class="tp-product-action-btn-2 tp-product-add-cart-btn">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                <span class="tp-product-tooltip tp-product-tooltip-right">Add to Cart</span>
+                              </button>
+                            {% endcomment %}
+                            <button
+                              type="button"
+                              class="tp-product-action-btn-2 tp-product-quick-view-btn"
+                              data-bs-toggle=""
+                              data-bs-target="#producQuickViewModal"
+                            >
+                              {% comment %}
+                                <button
+                                  type="button"
+                                  class="tp-product-action-btn-2 tp-product-quick-view-btn"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#producQuickViewModal"
+                                >
+                              {% endcomment %}
+                              <a href="{{ product.url }}">
+                                <i class="fa-regular fa-eye"></i>
+                                <span class="tp-product-tooltip tp-product-tooltip-right">Quick View</span>
+                              </a>
+                            </button>
+
+                            <button
+                              type="button"
+                              class="tp-product-action-btn-2 tp-product-add-to-wishlist-btn wishlist_button"
+                              onclick="
+                                toggleWishlist(
+                                '{{ product.id }}',
+                                '{{ product.title }}',
+                                '{{ product.featured_image | img_url: '' }}',
+                                '{{ product.price | money | remove_first: '' }}',
+                                '{{ product.url }}')
+                              "
+                            >
+                              <i
+                                class="fa-regular fa-heart"
+                              ></i>
+                              <span class="tp-product-tooltip tp-product-tooltip-right">Wishlist</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tp-product-content-2 pt-15">
+                        <div class="tp-product-tag-2">
+                          {% comment %} <a href="#">Tag Name</a> {% endcomment %}
+                        </div>
+                        <h3 class="tp-product-title-2">
+                          <a href="{{ product.url }}">{{ product.title }}</a>
+                        </h3>
+                        <div class="tp-product-rating-icon tp-product-rating-icon-2">
+                          <span><i class="fa-solid fa-star"></i></span>
+                          <span><i class="fa-solid fa-star"></i></span>
+                          <span><i class="fa-solid fa-star"></i></span>
+                          <span><i class="fa-solid fa-star"></i></span>
+                          <span><i class="fa-solid fa-star"></i></span>
+                        </div>
+                        <div class="tp-product-price-wrapper-2">
+                          <span class="tp-product-price-2 new-price">{{ product.price | money }}</span>
+                          <span class="tp-product-price-2 old-price">
+                            {%- if product.compare_at_price != '' %}
+                              {{ product.compare_at_price | money }}
+                            {% endif -%}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Customer Favorite",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "top_heading",
+      "default": "Heading Text",
+      "label": "Top Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "big_heading",
+      "default": "Heading Text",
+      "label": "Big Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "selected_collection",
+          "label": "Select Collection"
+          //"default": "frontpage"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3
+}
+{% endschema %}
+
+<script>
+  {% comment %} function addtowishlist(itemId) {
+    // Fetch the updated wishlist details
+    return fetch('/wishlist.js', {
+      method: 'POST', // Use POST if you're adding items to the wishlist
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Requested-With': 'XMLHttpRequest',
+      },
+      body: JSON.stringify({ itemId }), // Send the item ID in the request body
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Failed to add item to wishlist');
+        }
+        return response.json();
+      })
+      .then((wishlist) => {
+        // Print all wishlist items with additional details
+        console.log('Wishlist items:');
+        wishlist.items.forEach((item) => {
+          console.log(`Title: ${item.title}`);
+          console.log(`Quantity: ${item.quantity}`);
+          console.log(`Price: ${(item.price / 100).toFixed(2)} ${wishlist.currency}`); // Shopify price is in cents
+          console.log(`Image: ${item.image}`);
+          console.log(`Product URL: ${item.url}`);
+          console.log('-------------------------');
+        });
+
+        // Update the wishlist display or perform any necessary actions
+        window.location.reload();
+      })
+      .catch((error) => console.error('Error:', error));
+  } {% endcomment %}
+</script>

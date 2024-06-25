@@ -1,0 +1,131 @@
+<section class="tp-seller-area pb-140">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="tp-section-title-wrapper-2 mb-50">
+          <span class="tp-section-title-pre-2">
+            {{ section.settings.top_heading }}
+            <svg width="82" height="22" viewBox="0 0 82 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M81 14.5798C0.890564 -8.05914 -5.81154 0.0503902 5.00322 21" stroke="currentColor" stroke-opacity="0.3" stroke-width="2" stroke-miterlimit="3.8637" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <h3 class="tp-section-title-2">{{ section.settings.big_heading }}</h3>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      {% for block in section.blocks %}
+        {% assign product_handle = block.settings.selected_product %}
+        {% assign product = all_products[product_handle] %}
+        <div class="col-xl-3 col-lg-4 col-sm-6">
+          <div class="tp-product-item-2 mb-40">
+            <div class="tp-product-thumb-2 p-relative z-index-1 fix w-img">
+              <a href="{{ product.url }}">
+                <img
+                  src="{{ product.featured_image | img_url: 'master' }}"
+                  alt="{{ product.title }}"
+                  width=""
+                  height=""
+                >
+              </a>
+              <div class="tp-product-action-2 tp-product-action-blackStyle">
+                <div class="tp-product-action-item-2 d-flex flex-column">
+                  {% comment %}
+                    <button type="button" class="tp-product-action-btn-2 tp-product-add-cart-btn">
+                      <i class="fa-solid fa-cart-plus"></i>
+                      <span class="tp-product-tooltip tp-product-tooltip-right">Add to Cart</span>
+                    </button>
+                  {% endcomment %}
+                  <button
+                    type="button"
+                    class="tp-product-action-btn-2 tp-product-quick-view-btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#producQuickViewModal"
+                  >
+                    <i class="fa-regular fa-eye"></i>
+                    <span class="tp-product-tooltip tp-product-tooltip-right">Quick View</span>
+                  </button>
+                  <button
+                    type="button"
+                    class="tp-product-action-btn-2 tp-product-add-to-wishlist-btn"
+                    onclick="
+                      toggleWishlist(
+                      '{{ product.id }}',
+                      '{{ product.title }}',
+                      '{{ product.featured_image | img_url: '' }}',
+                      '{{ product.price | money | remove_first: '' }}',
+                      '{{ product.url }}')
+                    "
+                  >
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="tp-product-tooltip tp-product-tooltip-right">Add To Wishlist</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="tp-product-content-2 pt-15">
+              {% comment %}
+                <div class="tp-product-tag-2">
+                  <a href="#">Tag Name</a>
+                </div>
+              {% endcomment %}
+              <h3 class="tp-product-title-2">
+                <a href="{{ product.url }}">{{ product.title }}</a>
+              </h3>
+              <div class="tp-product-price-wrapper-2">
+                <span class="tp-product-price-2 new-price">{{ product.price | money }}</span>
+                <span class="tp-product-price-2 old-price">
+                  {%- if product.compare_at_price != '' %}
+                    {{ product.compare_at_price | money }}
+                  {% endif -%}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="tp-seller-more text-center mt-10">
+          <a href="/products" class="tp-btn tp-btn-border tp-btn-border-sm">Shop All Product</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured Product",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "top_heading",
+      "default": "Heading Text",
+      "label": "Top Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "big_heading",
+      "default": "Heading Text",
+      "label": "Big Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "selected_product",
+          "label": "Select Product"
+          //"default": "frontpage"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4
+}
+{% endschema %}

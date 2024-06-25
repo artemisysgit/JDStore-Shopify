@@ -1,0 +1,114 @@
+<section class="tp-category-area pb-95 pt-95">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="tp-section-title-wrapper-2 text-center mb-50">
+          <span class="tp-section-title-pre-2">
+            {{ section.settings.shop_cat_text }}
+            <svg width="82" height="22" viewBox="0 0 82 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M81 14.5798C0.890564 -8.05914 -5.81154 0.0503902 5.00322 21" stroke="currentColor" stroke-opacity="0.3" stroke-width="2" stroke-miterlimit="3.8637" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <h3 class="tp-section-title-2">{{ section.settings.pop_text }}</h3>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="tp-category-slider-2">
+          <div class="tp-category-slider-active-2 swiper-container mb-50">
+            <div class="swiper-wrapper">
+              {% for block in section.blocks %}
+                {% assign collection_handle = block.settings.selected_collection %}
+                {% assign collection = collections[collection_handle] %}
+                {% assign min_price = collection.products.first.price %}
+                {% for product in collection.products %}
+                  {% if product.price < min_price %}
+                    {% assign min_price = product.price %}
+                  {% endif %}
+                {% endfor %}
+                <div class="tp-category-item-2 p-relative z-index-1 text-center swiper-slide">
+                  <div class="tp-category-thumb-2">
+                    <a href="#">
+                      <img
+                        src="{{ block.settings.image_banner | img_url: 'master' }}"
+                        alt="{{ collection.title }}"
+                        width="100%"
+                        height="255px"
+                      >
+                    </a>
+                  </div>
+
+                  <div class="tp-category-content-2">
+                    <span>From {{ min_price | money }}</span>
+
+                    <h3 class="tp-category-title-2">
+                      <a href="{{ collection.url }}">{{ block.settings.col_heading }}</a>
+                    </h3>
+                    <div class="tp-category-btn-2">
+                      <a href="{{ collection.url }}" class="tp-btn tp-btn-border"> Explore Now</a>
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="swiper-scrollbar tp-swiper-scrollbar tp-swiper-scrollbar-drag"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Popular Collections",
+  "blocks": [
+    {
+      "type": "banner",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "text",
+          "id": "col_heading",
+          "default": "Heading",
+          "label": "Heading"
+        },
+        {
+          "type": "collection",
+          "id": "selected_collection",
+          "label": "Select Collection"
+        },
+        {
+          "type": "image_picker",
+          "label": "Banner Image",
+          "id": "image_banner"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "banner"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "label": "Shopy By Category",
+      "id": "shop_cat_text"
+    },
+    {
+      "type": "text",
+      "label": "Popular Text",
+      "id": "pop_text"
+    }
+  ]
+}
+{% endschema %}

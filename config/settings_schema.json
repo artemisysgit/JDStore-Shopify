@@ -2,10 +2,10 @@
   {
     "name": "theme_info",
     "theme_name": "Dawn",
-    "theme_version": "14.0.0",
+    "theme_version": "13.0.1",
     "theme_author": "Shopify",
-    "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
-    "theme_support_url": "https://support.shopify.com/"
+    "theme_documentation_url": "https:\/\/help.shopify.com\/manual\/online-store\/themes",
+    "theme_support_url": "https:\/\/support.shopify.com\/"
   },
   {
     "name": "t:settings_schema.logo.name",
@@ -1464,6 +1464,115 @@
         "label": "t:sections.all.colors.label",
         "default": "scheme-1"
       }
+    ]
+  },
+  {
+    "name": "Top Header Setting",
+    "settings": [
+      {
+        "type": "textarea",
+        "label": "Tagline",
+        "id": "Tagline"
+      }
+    ]
+  },
+  {
+    "name": "Footer Setting",
+    "settings": [
+      {
+        "type": "textarea",
+        "label": "Tagline",
+        "id": "footer_tagline"
+      },
+      {
+        "type": "text",
+        "label": "FB",
+        "id": "fb_link"
+      },
+      {
+        "type": "text",
+        "label": "Twitter",
+        "id": "tw_link"
+      },
+      {
+        "type": "text",
+        "label": "IN",
+        "id": "in_link"
+      },
+      {
+        "type": "text",
+        "label": "Talk To Us",
+        "id": "talk"
+      },
+      {
+        "type": "text",
+        "label": "Question",
+        "id": "question"
+      },
+      {
+        "type": "text",
+        "label": "Phone",
+        "id": "phone"
+      },
+      {
+        "type": "text",
+        "label": "Email",
+        "id": "email"
+      },
+      {
+        "type": "textarea",
+        "label": "Copyright",
+        "id": "copy"
+      }
+    ]
+  },
+  {
+    "name":"Wishlist",
+    "settings":[
+      {
+        "type": "paragraph",
+        "content": "Subscribe our channel [websensepro](https:\/\/youtube.com\/@websensepro?sub_confirmation=1)"
+      },
+     {
+        "type":"checkbox",
+        "id":"enable-wishlist",
+        "label": "Enable Wishlist",
+        "default": false
+      },
+      {
+        "type":"checkbox",
+        "id":"wishlist-floating-button-position",
+        "label": "Enable Floating Button",
+        "default": false
+      },
+       {
+      "type": "select",
+      "id": "floating_button-position",
+      "options": [
+        {
+          "value": "middle-left",
+          "label": "Middle Left"
+        },
+        {
+          "value": "middle-right",
+          "label": "Middle Right"
+        },
+        {
+          "value": "bottom-left",
+          "label": "Bottom Left"
+        },
+        {
+          "value": "bottom-center",
+          "label": "Bottom Center"
+        },
+        {
+          "value": "bottom-right",
+          "label": "Bottom Right"
+        }
+      ],
+      "default": "middle-right",
+      "label": "Floating Button Position"
+    }
     ]
   }
 ]

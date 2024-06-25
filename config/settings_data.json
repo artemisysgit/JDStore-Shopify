@@ -1,5 +1,517 @@
 {
-  "current": "Default",
+  "current": {
+    "logo": "shopify:\/\/shop_images\/brandmark-design_82805a88-bb21-48ec-a1b4-eebde563b7fc.png",
+    "logo_width": 90,
+    "favicon": "shopify:\/\/shop_images\/Screenshot_2024-05-31_162943.png",
+    "type_header_font": "assistant_n4",
+    "heading_scale": 100,
+    "type_body_font": "assistant_n4",
+    "body_scale": 100,
+    "page_width": 1200,
+    "spacing_sections": 0,
+    "spacing_grid_horizontal": 8,
+    "spacing_grid_vertical": 8,
+    "animations_reveal_on_scroll": true,
+    "animations_hover_elements": "none",
+    "buttons_border_thickness": 1,
+    "buttons_border_opacity": 100,
+    "buttons_radius": 0,
+    "buttons_shadow_opacity": 0,
+    "buttons_shadow_horizontal_offset": 0,
+    "buttons_shadow_vertical_offset": 4,
+    "buttons_shadow_blur": 5,
+    "variant_pills_border_thickness": 1,
+    "variant_pills_border_opacity": 55,
+    "variant_pills_radius": 40,
+    "variant_pills_shadow_opacity": 0,
+    "variant_pills_shadow_horizontal_offset": 0,
+    "variant_pills_shadow_vertical_offset": 4,
+    "variant_pills_shadow_blur": 5,
+    "inputs_border_thickness": 1,
+    "inputs_border_opacity": 55,
+    "inputs_radius": 0,
+    "inputs_shadow_opacity": 0,
+    "inputs_shadow_horizontal_offset": 0,
+    "inputs_shadow_vertical_offset": 4,
+    "inputs_shadow_blur": 5,
+    "card_style": "standard",
+    "card_image_padding": 0,
+    "card_text_alignment": "left",
+    "card_color_scheme": "scheme-2",
+    "card_border_thickness": 0,
+    "card_border_opacity": 10,
+    "card_corner_radius": 0,
+    "card_shadow_opacity": 0,
+    "card_shadow_horizontal_offset": 0,
+    "card_shadow_vertical_offset": 4,
+    "card_shadow_blur": 5,
+    "collection_card_style": "standard",
+    "collection_card_image_padding": 0,
+    "collection_card_text_alignment": "left",
+    "collection_card_color_scheme": "scheme-2",
+    "collection_card_border_thickness": 0,
+    "collection_card_border_opacity": 10,
+    "collection_card_corner_radius": 0,
+    "collection_card_shadow_opacity": 0,
+    "collection_card_shadow_horizontal_offset": 0,
+    "collection_card_shadow_vertical_offset": 4,
+    "collection_card_shadow_blur": 5,
+    "blog_card_style": "standard",
+    "blog_card_image_padding": 0,
+    "blog_card_text_alignment": "left",
+    "blog_card_color_scheme": "scheme-2",
+    "blog_card_border_thickness": 0,
+    "blog_card_border_opacity": 10,
+    "blog_card_corner_radius": 0,
+    "blog_card_shadow_opacity": 0,
+    "blog_card_shadow_horizontal_offset": 0,
+    "blog_card_shadow_vertical_offset": 4,
+    "blog_card_shadow_blur": 5,
+    "text_boxes_border_thickness": 0,
+    "text_boxes_border_opacity": 10,
+    "text_boxes_radius": 0,
+    "text_boxes_shadow_opacity": 0,
+    "text_boxes_shadow_horizontal_offset": 0,
+    "text_boxes_shadow_vertical_offset": 4,
+    "text_boxes_shadow_blur": 5,
+    "media_border_thickness": 1,
+    "media_border_opacity": 5,
+    "media_radius": 0,
+    "media_shadow_opacity": 0,
+    "media_shadow_horizontal_offset": 0,
+    "media_shadow_vertical_offset": 4,
+    "media_shadow_blur": 5,
+    "popup_border_thickness": 1,
+    "popup_border_opacity": 10,
+    "popup_corner_radius": 0,
+    "popup_shadow_opacity": 5,
+    "popup_shadow_horizontal_offset": 0,
+    "popup_shadow_vertical_offset": 4,
+    "popup_shadow_blur": 5,
+    "drawer_border_thickness": 1,
+    "drawer_border_opacity": 10,
+    "drawer_shadow_opacity": 0,
+    "drawer_shadow_horizontal_offset": 0,
+    "drawer_shadow_vertical_offset": 4,
+    "drawer_shadow_blur": 5,
+    "badge_position": "bottom left",
+    "badge_corner_radius": 40,
+    "sale_badge_color_scheme": "scheme-4",
+    "sold_out_badge_color_scheme": "scheme-3",
+    "brand_headline": "",
+    "brand_description": "<p><\/p>",
+    "brand_image_width": 100,
+    "social_facebook_link": "",
+    "social_instagram_link": "",
+    "social_youtube_link": "",
+    "social_tiktok_link": "",
+    "social_twitter_link": "",
+    "social_snapchat_link": "",
+    "social_pinterest_link": "",
+    "social_tumblr_link": "",
+    "social_vimeo_link": "",
+    "predictive_search_enabled": true,
+    "predictive_search_show_vendor": false,
+    "predictive_search_show_price": false,
+    "currency_code_enabled": true,
+    "cart_type": "drawer",
+    "show_vendor": false,
+    "show_cart_note": false,
+    "cart_drawer_collection": "",
+    "cart_color_scheme": "scheme-1",
+    "Tagline": "Open Doors To A World Of Fashion",
+    "footer_tagline": "We are a team of designers and developers that create high quality Websites",
+    "fb_link": "https:\/\/www.facebook.com\/",
+    "tw_link": "https:\/\/x.com\/?lang=en",
+    "in_link": "https:\/\/in.linkedin.com\/",
+    "talk": "Talk To Us",
+    "question": "Got Questions? Call us",
+    "phone": "+670 413 90 762",
+    "email": "info@thejdstore.us",
+    "copy": "© 2024, All Rights Reserved by The JD Store | Design & Developed by <a href=\"https:\/\/www.artemisys.com\/\" target=\"_blank\">Artemisys<\/a>",
+    "sections": {
+      "main-password-header": {
+        "type": "main-password-header",
+        "settings": {
+          "color_scheme": "scheme-1"
+        }
+      },
+      "main-password-footer": {
+        "type": "main-password-footer",
+        "settings": {
+          "color_scheme": "scheme-1"
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+        }
+      },
+      "home": {
+        "type": "home",
+        "settings": {
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+        }
+      },
+      "banner": {
+        "type": "banner",
+        "blocks": {
+          "banner_UbtB9A": {
+            "type": "banner",
+            "settings": {
+              "top_heading": "New Arrival",
+              "banner_sub_heading": "Fashion-forward collections trend meets tradition.",
+              "selected_collection": "new-arrival-fashions",
+              "image_banner": "shopify:\/\/shop_images\/banner-img.png"
+            }
+          },
+          "banner_GxCPkc": {
+            "type": "banner",
+            "settings": {
+              "top_heading": "New Arrival",
+              "banner_sub_heading": "Accessories collection, Every detail matters.",
+              "selected_collection": "new-arrival-accessories",
+              "image_banner": "shopify:\/\/shop_images\/Untitled_design_6.png"
+            }
+          },
+          "banner_iDHaVp": {
+            "type": "banner",
+            "settings": {
+              "top_heading": "New Arrival",
+              "banner_sub_heading": "Discover our exquisite  Furniture collection.",
+              "selected_collection": "new-arrival-furnitures",
+              "image_banner": "shopify:\/\/shop_images\/Untitled_design_7.png"
+            }
+          }
+        },
+        "block_order": [
+          "banner_UbtB9A",
+          "banner_GxCPkc",
+          "banner_iDHaVp"
+        ],
+        "settings": {
+        }
+      },
+      "collection_blocks": {
+        "type": "collection_blocks",
+        "blocks": {
+          "banner_dLfXPW": {
+            "type": "banner",
+            "settings": {
+              "heading": "T-Shirt Tunic <br> Tops Blouse",
+              "selected_collection": "categorie-women-t-shirts",
+              "image_banner": "shopify:\/\/shop_images\/banner-1_b09cb302-2af2-443e-ad8d-b8cf9238d3ea.jpg"
+            }
+          },
+          "banner_iVmjLA": {
+            "type": "banner",
+            "settings": {
+              "heading": "Satchel Tote <br> Crossbody Bags",
+              "selected_collection": "bags-backpacks",
+              "image_banner": "shopify:\/\/shop_images\/banner-1_b09cb302-2af2-443e-ad8d-b8cf9238d3ea.jpg"
+            }
+          },
+          "banner_3XkWTn": {
+            "type": "banner",
+            "settings": {
+              "heading": "Men's Tennis <br> Walking Shoes",
+              "selected_collection": "shoes",
+              "image_banner": "shopify:\/\/shop_images\/banner-1_b09cb302-2af2-443e-ad8d-b8cf9238d3ea.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "banner_dLfXPW",
+          "banner_iVmjLA",
+          "banner_3XkWTn"
+        ],
+        "settings": {
+        }
+      },
+      "popular_collection": {
+        "type": "popular_collection",
+        "blocks": {
+          "banner_zt8XY4": {
+            "type": "banner",
+            "settings": {
+              "col_heading": "Crew Neck T-shirt",
+              "selected_collection": "furniture",
+              "image_banner": "shopify:\/\/shop_images\/category-1.jpg"
+            }
+          },
+          "banner_m9MiJY": {
+            "type": "banner",
+            "settings": {
+              "col_heading": "Crew Neck T-shirt",
+              "selected_collection": "t-shirts-tanks",
+              "image_banner": "shopify:\/\/shop_images\/category-1.jpg"
+            }
+          },
+          "banner_4qWXxY": {
+            "type": "banner",
+            "settings": {
+              "col_heading": "Crew Neck Tshirt",
+              "selected_collection": "accent-chairs",
+              "image_banner": "shopify:\/\/shop_images\/38816018_large_b8f450c1-4346-4dad-bf59-6c4fc89e1080.png"
+            }
+          },
+          "banner_4yaQnE": {
+            "type": "banner",
+            "settings": {
+              "col_heading": "Crew Tshirt",
+              "selected_collection": "apparel",
+              "image_banner": "shopify:\/\/shop_images\/38816018_large_b8f450c1-4346-4dad-bf59-6c4fc89e1080.png"
+            }
+          },
+          "banner_qxRkEL": {
+            "type": "banner",
+            "settings": {
+              "col_heading": "Crew Test Tshirt",
+              "selected_collection": "arts-crafts-sewing",
+              "image_banner": "shopify:\/\/shop_images\/38396773_large_79da8284-0137-4156-b854-57731ab167b4.png"
+            }
+          }
+        },
+        "block_order": [
+          "banner_zt8XY4",
+          "banner_m9MiJY",
+          "banner_4qWXxY",
+          "banner_4yaQnE",
+          "banner_qxRkEL"
+        ],
+        "settings": {
+          "shop_cat_text": "Shop by Category",
+          "pop_text": "Popular on the JD store."
+        }
+      },
+      "customer_favorite": {
+        "type": "customer_favorite",
+        "blocks": {
+          "collection_xzjAdm": {
+            "type": "collection",
+            "settings": {
+              "selected_collection": "shoes"
+            }
+          },
+          "collection_dwyJVm": {
+            "type": "collection",
+            "settings": {
+              "selected_collection": "clothing"
+            }
+          },
+          "collection_jcdbeA": {
+            "type": "collection",
+            "settings": {
+              "selected_collection": "bags-luggage"
+            }
+          }
+        },
+        "block_order": [
+          "collection_xzjAdm",
+          "collection_dwyJVm",
+          "collection_jcdbeA"
+        ],
+        "settings": {
+          "top_heading": "All Product Shop",
+          "big_heading": "Customer Favorite Style Product"
+        }
+      },
+      "featured_collection": {
+        "type": "featured_collection",
+        "blocks": {
+          "collection_DjRtzD": {
+            "type": "collection",
+            "settings": {
+              "selected_collection": "accessories",
+              "image_banner": "shopify:\/\/shop_images\/product-slider-1.jpg"
+            }
+          },
+          "collection_DVh4Gp": {
+            "type": "collection",
+            "settings": {
+              "selected_collection": "clothing-sets",
+              "image_banner": "shopify:\/\/shop_images\/product-slider-1.jpg"
+            }
+          },
+          "collection_aYPqtB": {
+            "type": "collection",
+            "settings": {
+              "selected_collection": "apparel",
+              "image_banner": "shopify:\/\/shop_images\/product-slider-1.jpg"
+            }
+          },
+          "collection_Kn8Dm8": {
+            "type": "collection",
+            "settings": {
+              "selected_collection": "arts-crafts",
+              "image_banner": "shopify:\/\/shop_images\/product-slider-1.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "collection_DjRtzD",
+          "collection_DVh4Gp",
+          "collection_aYPqtB",
+          "collection_Kn8Dm8"
+        ],
+        "settings": {
+          "top_heading": "Shop by Category",
+          "sub_heading": "This Week's Featured"
+        }
+      },
+      "trending_arrival": {
+        "type": "trending_arrival",
+        "blocks": {
+          "product_FXbXhX": {
+            "type": "product",
+            "settings": {
+              "selected_product": "bling-tall-pocket-perfect-for-epipens-sunglasses"
+            }
+          },
+          "product_EmTC8h": {
+            "type": "product",
+            "settings": {
+              "selected_product": "3-pack-tempered-glass-screen-protector-for-iphone-12-iphone-12-pro"
+            }
+          },
+          "product_p6WK8M": {
+            "type": "product",
+            "settings": {
+              "selected_product": "bling-essentials-medium-leg-stash-for-valuables-personal-hygiene-items"
+            }
+          },
+          "product_TGdGa3": {
+            "type": "product",
+            "settings": {
+              "selected_product": "bling-belt-pocket-kit-handsfree-cellphone-holder-ideal-for-passports-too"
+            }
+          }
+        },
+        "block_order": [
+          "product_FXbXhX",
+          "product_EmTC8h",
+          "product_p6WK8M",
+          "product_TGdGa3"
+        ],
+        "settings": {
+          "top_heading": "More to Discover",
+          "big_heading": "Trending Arrivals",
+          "selected_collection": "accessories",
+          "image_banner": "shopify:\/\/shop_images\/trending-banner.jpg"
+        }
+      },
+      "featured_product": {
+        "type": "featured_product",
+        "blocks": {
+          "product_qd3Cmc": {
+            "type": "product",
+            "settings": {
+              "selected_product": "little-bear-silhouette-babys-bodysuit"
+            }
+          },
+          "product_rj7JkU": {
+            "type": "product",
+            "settings": {
+              "selected_product": "sister-shark-silhouette-toddlers-t-shirt"
+            }
+          },
+          "product_j9d3Di": {
+            "type": "product",
+            "settings": {
+              "selected_product": "sister-bear-silhouette-toddlers-t-shirt"
+            }
+          },
+          "product_79mFqP": {
+            "type": "product",
+            "settings": {
+              "selected_product": "amelie-custom-bodysuit-custom-designs"
+            }
+          }
+        },
+        "block_order": [
+          "product_qd3Cmc",
+          "product_rj7JkU",
+          "product_j9d3Di",
+          "product_79mFqP"
+        ],
+        "settings": {
+          "top_heading": "Best Seller This Week’s",
+          "big_heading": "This Week's Featured"
+        }
+      },
+      "blog_listing": {
+        "type": "blog_listing",
+        "settings": {
+          "top_heading": "Our Blog & News",
+          "big_heading": "Latest News & Articles"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ],
+    "color_schemes": {
+      "scheme-1": {
+        "settings": {
+          "background": "#ffffff",
+          "background_gradient": "",
+          "text": "#121212",
+          "button": "#121212",
+          "button_label": "#ffffff",
+          "secondary_button_label": "#121212",
+          "shadow": "#121212"
+        }
+      },
+      "scheme-2": {
+        "settings": {
+          "background": "#f3f3f3",
+          "background_gradient": "",
+          "text": "#121212",
+          "button": "#121212",
+          "button_label": "#f3f3f3",
+          "secondary_button_label": "#121212",
+          "shadow": "#121212"
+        }
+      },
+      "scheme-3": {
+        "settings": {
+          "background": "#242833",
+          "background_gradient": "",
+          "text": "#ffffff",
+          "button": "#ffffff",
+          "button_label": "#000000",
+          "secondary_button_label": "#ffffff",
+          "shadow": "#121212"
+        }
+      },
+      "scheme-4": {
+        "settings": {
+          "background": "#121212",
+          "background_gradient": "",
+          "text": "#ffffff",
+          "button": "#ffffff",
+          "button_label": "#121212",
+          "secondary_button_label": "#ffffff",
+          "shadow": "#121212"
+        }
+      },
+      "scheme-5": {
+        "settings": {
+          "background": "#334fb4",
+          "background_gradient": "",
+          "text": "#ffffff",
+          "button": "#ffffff",
+          "button_label": "#334fb4",
+          "secondary_button_label": "#ffffff",
+          "shadow": "#121212"
+        }
+      }
+    }
+  },
   "presets": {
     "Default": {
       "logo_width": 90,
@@ -68,6 +580,8 @@
       "spacing_sections": 0,
       "spacing_grid_horizontal": 8,
       "spacing_grid_vertical": 8,
+      "animations_reveal_on_scroll": true,
+      "animations_hover_elements": "none",
       "buttons_border_thickness": 1,
       "buttons_border_opacity": 100,
       "buttons_radius": 0,
@@ -151,8 +665,11 @@
       "drawer_shadow_blur": 5,
       "badge_position": "bottom left",
       "badge_corner_radius": 40,
-      "sale_badge_color_scheme": "scheme-5",
+      "sale_badge_color_scheme": "scheme-4",
       "sold_out_badge_color_scheme": "scheme-3",
+      "brand_headline": "",
+      "brand_description": "<p><\/p>",
+      "brand_image_width": 100,
       "social_twitter_link": "",
       "social_facebook_link": "",
       "social_pinterest_link": "",
@@ -170,6 +687,7 @@
       "show_vendor": false,
       "show_cart_note": false,
       "cart_drawer_collection": "",
+      "cart_color_scheme": "scheme-1",
       "sections": {
         "main-password-header": {
           "type": "main-password-header",

@@ -1,0 +1,73 @@
+<section class="tp-blog-area pt-110 pb-120">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="tp-section-title-wrapper-2 mb-50 text-center">
+          <span class="tp-section-title-pre-2">
+            {{ section.settings.top_heading }}
+            <svg width="82" height="22" viewBox="0 0 82 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M81 14.5798C0.890564 -8.05914 -5.81154 0.0503902 5.00322 21" stroke="currentColor" stroke-opacity="0.3" stroke-width="2" stroke-miterlimit="3.8637" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <h3 class="tp-section-title-2">{{ section.settings.big_heading }}</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      {% for article in blogs['my-blogs'].articles limit: 3 %}
+        <div class="col-xl-4 col-lg-4 col-md-6">
+          <div class="tp-blog-item-2 mb-40">
+            <div class="tp-blog-thumb-2 p-relative fix">
+              <a href="{{ article.url }}">
+                <img src="{{ article.image.src | img_url: 'medium' }}" alt="{{ article.image.alt | escape }}" alt="">
+              </a>
+              <div class="tp-blog-meta-date-2">
+                <span>{{ article.published_at | date: '%B %d, %Y' }}</span>
+              </div>
+            </div>
+            <div class="tp-blog-content-2 has-thumbnail">
+              <div class="tp-blog-meta-2">
+                <span>
+                  <i class="fa-solid fa-tags"></i>
+                </span>
+                <a href="javacript:void(0);">{{ article.tags | join: ', ' }}</a>
+              </div>
+              <h3 class="tp-blog-title-2">
+                <a href="{{ article.url }}">{{ article.title }}</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="tp-blog-more-2 mt-10 text-center">
+          <a href="/blogs/my-blogs/" class="tp-btn tp-btn-border tp-btn-border-sm">Discover More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Blogs",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "top_heading",
+      "default": "Heading Text",
+      "label": "Top Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "big_heading",
+      "default": "Heading Text",
+      "label": "Big Heading"
+    }
+  ]
+}
+{% endschema %}
